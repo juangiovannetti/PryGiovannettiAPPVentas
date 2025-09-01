@@ -42,7 +42,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(228, 128);
+            lblFecha.Location = new Point(246, 128);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(38, 15);
             lblFecha.TabIndex = 0;
@@ -51,7 +51,7 @@
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(228, 168);
+            lblProducto.Location = new Point(246, 168);
             lblProducto.Name = "lblProducto";
             lblProducto.Size = new Size(56, 15);
             lblProducto.TabIndex = 1;
@@ -60,7 +60,7 @@
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(228, 224);
+            lblCantidad.Location = new Point(246, 224);
             lblCantidad.Name = "lblCantidad";
             lblCantidad.Size = new Size(55, 15);
             lblCantidad.TabIndex = 2;
@@ -94,10 +94,12 @@
             // 
             // dtpFecha
             // 
+            dtpFecha.Format = DateTimePickerFormat.Short;
             dtpFecha.Location = new Point(338, 128);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(200, 23);
+            dtpFecha.Size = new Size(100, 23);
             dtpFecha.TabIndex = 6;
+            dtpFecha.ValueChanged += this.dtpFecha_ValueChanged;
             // 
             // txtCantidad
             // 
