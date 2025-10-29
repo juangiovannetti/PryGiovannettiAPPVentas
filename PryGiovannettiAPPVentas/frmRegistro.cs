@@ -69,7 +69,7 @@ namespace PryGiovannettiAPPVentas
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            vFecha = dtmFecha.Value;
+            vFecha = dtpFecha.Value;
             vProducto = cmbProducto.Text;
             //cmbProducto.selectedItem
             vCantidad = Convert.ToInt32(nudCantidad.Value);
@@ -78,18 +78,20 @@ namespace PryGiovannettiAPPVentas
 
             //mostrar los resultados
             // +/n salto de linea
-            lblResultado.Text +=
+            lstResultado.Text +=
                 vFecha + " " + vProducto
                  + "" + vCantidad + "" + vPrecio + '\n';
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            dtmFecha.Value = DateTime.Now;
+            dtpFecha.Value = DateTime.Now;
             cmbProducto.Text = "";
             nudCantidad.Value = 0;
             mtbPrecioUnitario.Text = "";
             cmbProducto.SelectedIndex = -1;
+            //Se utiliza para inidicar donde queda el control (Click)
+            cmbProducto.Focus();
 
 
         }

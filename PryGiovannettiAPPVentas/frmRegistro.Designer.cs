@@ -34,55 +34,60 @@
             lblPrecioUnitario = new Label();
             btnRegistrar = new Button();
             cmbProducto = new ComboBox();
-            dtmFecha = new DateTimePicker();
+            dtpFecha = new DateTimePicker();
             mtbPrecioUnitario = new MaskedTextBox();
             btnCancelar = new Button();
             nudCantidad = new NumericUpDown();
-            lblResultado = new Label();
+            lstResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(228, 128);
+            lblFecha.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFecha.Location = new Point(25, 28);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(38, 15);
+            lblFecha.Size = new Size(55, 23);
             lblFecha.TabIndex = 0;
             lblFecha.Text = "Fecha";
             // 
             // lblProducto
             // 
             lblProducto.AutoSize = true;
-            lblProducto.Location = new Point(228, 168);
+            lblProducto.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProducto.Location = new Point(25, 73);
             lblProducto.Name = "lblProducto";
-            lblProducto.Size = new Size(56, 15);
+            lblProducto.Size = new Size(80, 23);
             lblProducto.TabIndex = 1;
             lblProducto.Text = "Producto";
             // 
             // lblCantidad
             // 
             lblCantidad.AutoSize = true;
-            lblCantidad.Location = new Point(228, 224);
+            lblCantidad.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCantidad.Location = new Point(25, 118);
             lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(55, 15);
+            lblCantidad.Size = new Size(70, 20);
             lblCantidad.TabIndex = 2;
             lblCantidad.Text = "Cantidad";
             // 
             // lblPrecioUnitario
             // 
             lblPrecioUnitario.AutoSize = true;
-            lblPrecioUnitario.Location = new Point(228, 278);
+            lblPrecioUnitario.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrecioUnitario.Location = new Point(25, 168);
             lblPrecioUnitario.Name = "lblPrecioUnitario";
-            lblPrecioUnitario.Size = new Size(84, 15);
+            lblPrecioUnitario.Size = new Size(121, 23);
             lblPrecioUnitario.TabIndex = 3;
             lblPrecioUnitario.Text = "Precio unitario";
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(547, 323);
+            btnRegistrar.Location = new Point(244, 324);
+            btnRegistrar.Margin = new Padding(3, 4, 3, 4);
             btnRegistrar.Name = "btnRegistrar";
-            btnRegistrar.Size = new Size(88, 33);
+            btnRegistrar.Size = new Size(101, 44);
             btnRegistrar.TabIndex = 4;
             btnRegistrar.Text = "Registrar";
             btnRegistrar.UseVisualStyleBackColor = true;
@@ -90,34 +95,39 @@
             // cmbProducto
             // 
             cmbProducto.FormattingEnabled = true;
-            cmbProducto.Location = new Point(338, 168);
+            cmbProducto.Location = new Point(136, 65);
+            cmbProducto.Margin = new Padding(3, 4, 3, 4);
             cmbProducto.Name = "cmbProducto";
-            cmbProducto.Size = new Size(200, 23);
+            cmbProducto.Size = new Size(114, 28);
             cmbProducto.TabIndex = 5;
             cmbProducto.TextChanged += cmbProducto_TextChanged;
             // 
-            // dtmFecha
+            // dtpFecha
             // 
-            dtmFecha.Format = DateTimePickerFormat.Short;
-            dtmFecha.Location = new Point(338, 128);
-            dtmFecha.Name = "dtmFecha";
-            dtmFecha.Size = new Size(100, 23);
-            dtmFecha.TabIndex = 6;
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(136, 28);
+            dtpFecha.Margin = new Padding(3, 4, 3, 4);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(114, 27);
+            dtpFecha.TabIndex = 6;
             // 
             // mtbPrecioUnitario
             // 
-            mtbPrecioUnitario.Location = new Point(338, 270);
+            mtbPrecioUnitario.Enabled = false;
+            mtbPrecioUnitario.Location = new Point(152, 167);
+            mtbPrecioUnitario.Margin = new Padding(3, 4, 3, 4);
             mtbPrecioUnitario.Mask = "99999999";
             mtbPrecioUnitario.Name = "mtbPrecioUnitario";
-            mtbPrecioUnitario.Size = new Size(100, 23);
+            mtbPrecioUnitario.Size = new Size(81, 27);
             mtbPrecioUnitario.TabIndex = 9;
             mtbPrecioUnitario.ValidatingType = typeof(int);
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(414, 323);
+            btnCancelar.Location = new Point(83, 324);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(91, 33);
+            btnCancelar.Size = new Size(104, 44);
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -125,38 +135,41 @@
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(338, 224);
+            nudCantidad.Location = new Point(136, 111);
+            nudCantidad.Margin = new Padding(3, 4, 3, 4);
             nudCantidad.Name = "nudCantidad";
-            nudCantidad.Size = new Size(100, 23);
+            nudCantidad.Size = new Size(114, 27);
             nudCantidad.TabIndex = 11;
             nudCantidad.ValueChanged += nudCantidad_ValueChanged;
             // 
-            // lblResultado
+            // lstResultado
             // 
-            lblResultado.BorderStyle = BorderStyle.Fixed3D;
-            lblResultado.Location = new Point(228, 366);
-            lblResultado.Name = "lblResultado";
-            lblResultado.Size = new Size(210, 75);
-            lblResultado.TabIndex = 12;
-            lblResultado.Text = "---";
+            lstResultado.BorderStyle = BorderStyle.Fixed3D;
+            lstResultado.Location = new Point(25, 211);
+            lstResultado.Name = "lstResultado";
+            lstResultado.Size = new Size(240, 100);
+            lstResultado.TabIndex = 12;
+            lstResultado.Text = "---";
             // 
             // frmRegistro
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(lblResultado);
+            ClientSize = new Size(373, 398);
+            Controls.Add(lstResultado);
             Controls.Add(nudCantidad);
             Controls.Add(btnCancelar);
             Controls.Add(mtbPrecioUnitario);
-            Controls.Add(dtmFecha);
+            Controls.Add(dtpFecha);
             Controls.Add(cmbProducto);
             Controls.Add(btnRegistrar);
             Controls.Add(lblPrecioUnitario);
             Controls.Add(lblCantidad);
             Controls.Add(lblProducto);
             Controls.Add(lblFecha);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmRegistro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "APP VENTAS DE HARWARE";
             Load += frmRegistro_Load;
             ((System.ComponentModel.ISupportInitialize)nudCantidad).EndInit();
@@ -172,10 +185,10 @@
         private Label lblPrecioUnitario;
         private Button btnRegistrar;
         private ComboBox cmbProducto;
-        private DateTimePicker dtmFecha;
+        private DateTimePicker dtpFecha;
         private MaskedTextBox mtbPrecioUnitario;
         private Button btnCancelar;
         private NumericUpDown nudCantidad;
-        private Label lblResultado;
+        private Label lstResultado;
     }
 }
