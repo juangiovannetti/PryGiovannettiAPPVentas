@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistro));
             lblFecha = new Label();
             lblProducto = new Label();
             lblCantidad = new Label();
@@ -38,7 +39,7 @@
             mtbPrecioUnitario = new MaskedTextBox();
             btnCancelar = new Button();
             nudCantidad = new NumericUpDown();
-            lstResultado = new Label();
+            lblResultado = new Label();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
             SuspendLayout();
             // 
@@ -84,7 +85,8 @@
             // 
             // btnRegistrar
             // 
-            btnRegistrar.Location = new Point(244, 324);
+            btnRegistrar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrar.Location = new Point(213, 341);
             btnRegistrar.Margin = new Padding(3, 4, 3, 4);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(101, 44);
@@ -124,7 +126,8 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(83, 324);
+            btnCancelar.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.Location = new Point(82, 341);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(104, 44);
@@ -142,21 +145,22 @@
             nudCantidad.TabIndex = 11;
             nudCantidad.ValueChanged += nudCantidad_ValueChanged;
             // 
-            // lstResultado
+            // lblResultado
             // 
-            lstResultado.BorderStyle = BorderStyle.Fixed3D;
-            lstResultado.Location = new Point(25, 211);
-            lstResultado.Name = "lstResultado";
-            lstResultado.Size = new Size(240, 100);
-            lstResultado.TabIndex = 12;
-            lstResultado.Text = "---";
+            lblResultado.BorderStyle = BorderStyle.Fixed3D;
+            lblResultado.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResultado.Location = new Point(25, 229);
+            lblResultado.Name = "lblResultado";
+            lblResultado.Size = new Size(289, 91);
+            lblResultado.TabIndex = 12;
+            lblResultado.Text = "Resultado:";
             // 
             // frmRegistro
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(373, 398);
-            Controls.Add(lstResultado);
+            Controls.Add(lblResultado);
             Controls.Add(nudCantidad);
             Controls.Add(btnCancelar);
             Controls.Add(mtbPrecioUnitario);
@@ -167,6 +171,7 @@
             Controls.Add(lblCantidad);
             Controls.Add(lblProducto);
             Controls.Add(lblFecha);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "frmRegistro";
             StartPosition = FormStartPosition.CenterScreen;
@@ -189,6 +194,6 @@
         private MaskedTextBox mtbPrecioUnitario;
         private Button btnCancelar;
         private NumericUpDown nudCantidad;
-        private Label lstResultado;
+        private Label lblResultado;
     }
 }

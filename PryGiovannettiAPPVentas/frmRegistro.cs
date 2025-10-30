@@ -16,11 +16,13 @@ namespace PryGiovannettiAPPVentas
         {
             if (cmbProducto.Text != "")
             {
-                cmbProducto.Enabled = true;
+                //Habilita nudCantidad
+                nudCantidad.Enabled = true;
             }
             else
             {
-                cmbProducto.Enabled = false;
+                // Deshabilita nudCantidad cuando no hay producto seleccionado
+                nudCantidad.Enabled = false;
             }
         }
 
@@ -71,16 +73,16 @@ namespace PryGiovannettiAPPVentas
         {
             vFecha = dtpFecha.Value;
             vProducto = cmbProducto.Text;
-            //cmbProducto.selectedItem
+            //cmbProducto.SelectedItem
             vCantidad = Convert.ToInt32(nudCantidad.Value);
-            //otra manera es: vCantidad = intParce(nudCantidad.Value.TOstring));
-            vPrecio = Convert.ToInt32(mtbPrecioUnitario);
+            //otra manera es: vCantidad = intParce(nudCantidad.Value.ToString));
+            vPrecio = Convert.ToInt32(mtbPrecioUnitario.Text);
 
-            //mostrar los resultados
+            //Mostrar los resultados
             // +/n salto de linea
-            lstResultado.Text +=
-                vFecha + " " + vProducto
-                 + "" + vCantidad + "" + vPrecio + '\n';
+            lblResultado.Text +=
+                vFecha + "" + vProducto
+                + "" + vCantidad + "" + vPrecio + '\n';
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
