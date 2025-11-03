@@ -11,6 +11,19 @@ namespace PryGiovannettiAPPVentas
         string vProducto;
         int vCantidad;
         int vPrecio;
+        int indice = 0;
+
+        //Declaración struct
+        public struct datoVentas
+        {
+            public DateTime Fecha;
+            public string Producto;
+            public int Cantidad;
+            public int Precio;
+        }
+
+        //Declaración de array principal
+        public datoVentas[] vecProductos = new datoVentas[100];
 
         private void cmbProducto_TextChanged(object sender, EventArgs e)
         {
@@ -69,21 +82,6 @@ namespace PryGiovannettiAPPVentas
             }
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            vFecha = dtpFecha.Value;
-            vProducto = cmbProducto.Text;
-            //cmbProducto.SelectedItem
-            vCantidad = Convert.ToInt32(nudCantidad.Value);
-            //otra manera es: vCantidad = intParce(nudCantidad.Value.ToString));
-            vPrecio = Convert.ToInt32(mtbPrecioUnitario.Text);
-
-            //Mostrar los resultados
-            // +/n salto de linea
-            lblResultado.Text +=
-                vFecha + "" + vProducto
-                + "" + vCantidad + "" + vPrecio + '\n';
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -92,10 +90,43 @@ namespace PryGiovannettiAPPVentas
             nudCantidad.Value = 0;
             mtbPrecioUnitario.Text = "";
             cmbProducto.SelectedIndex = -1;
+            lstResultado.Items.Clear();
             //Se utiliza para inidicar donde queda el control (Click)
             cmbProducto.Focus();
 
+        }
 
+        private void btnRegistrar_Click_1(object sender, EventArgs e)
+        {
+            //Validamos que el array no este lleno
+            if (indice >= vecProductos.Length)
+            {
+                MessageBox.Show("El array se encuentra lleno, no se puede grabar más datos.", "Array lleno",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnRegistrar.Enabled = false;
+
+            }
+
+            //Otorgo valor a variables             
+            vFecha = dtpFecha.Value;
+            vProducto = cmbProducto.Text;
+            //cmbProducto.SelectedItem
+            vCantidad = Convert.ToInt32(nudCantidad.Value);
+            //otra manera es: vCantidad = intParce(nudCantidad.Value.ToString));
+            vPrecio = Convert.ToInt32(mtbPrecioUnitario.Text);
+
+            //Gabro datos en array
+            vecProductos[indice].Fecha = dtpFecha.Value;
+            vecProductos[indice].Producto = vProducto;
+            vecProductos[indice].Cantidad = vCantidad;
+            vecProductos[indice].Precio = vPrecio;
+            indice++;
+
+            //Mostrar resultado
+            lstResultado.Items.Add("Producto:" + vProducto);
+            lstResultado.Items.Add("Fecha:" + vFecha);
+            lstResultado.Items.Add("Cantidad:" + vCantidad);
+            lstResultado.Items.Add("Precio:$ " + vPrecio);
         }
     }
 }
